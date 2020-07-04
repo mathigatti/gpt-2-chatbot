@@ -1,5 +1,4 @@
 from flask import Flask, request, jsonify
-from aitextgen import aitextgen
 
 chatbot_html = """
 <style type="text/css">#log p { margin: 5px; font-family: sans-serif; }</style>
@@ -48,27 +47,11 @@ async function webGetResp(val) {
 
 app = Flask(__name__)
 
-# Para descargar el modelo la primera vez ejecutar la siguiente linea
-ai = aitextgen(tf_gpt2="355M", to_gpu=False)
-#ai = aitextgen(model="pytorch_model.bin", config="config.json", to_gpu=False)
-myself = "He: "
-bot = "She: "
-full_chat = f"{myself}You must be Carl, how are you doing?\n{bot}I'm doing well, thanks\n{myself}do you still live in that old town?\n{bot}yes, indeed!\n"
-full_chat = "He: I want to fuck you hottie\nShe: Please fuck me really hard\nHe: Your pussy is really wet\nShe: My pussy is tight and can take a lot of pain"
+from chatbot import myself, bot
+
 @app.route("/response.json")
 def response():
-	global full_chat
-	sentence = request.args['sentence']
-	full_chat += myself + sentence + "\n"
-
-	answer = ai.generate_one(prompt=full_chat + bot)
-	answer = answer[len(full_chat + bot):].split("\n")[0]
-
-	full_chat += answer + "\n"
-	full_chat = "\n".join(full_chat.split("\n")[-12:]) + "\n"
-
-	return jsonify({'result': answer})
-
+	return jsonify({'result': "I don't know"})
 
 @app.route("/")
 def home():
