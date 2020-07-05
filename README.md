@@ -29,3 +29,5 @@ sudo FLASK_APP=app.py FLASK_ENV=development flask run --port 80 --host 0.0.0.0
 
 - Send images
 	Fotos porno -> face depixelizer -> nude con cara inventada
+- Hotness knob
+- Penis/Pussy toggle
