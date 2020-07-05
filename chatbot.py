@@ -9,6 +9,9 @@ def start_model():
 	# Para descargar el modelo la primera vez ejecutar la siguiente linea
 	#ai = aitextgen(tf_gpt2="355M", to_gpu=False)
 	ai = aitextgen(model="pytorch_model.bin", config="config.json", to_gpu=False)
+	return ai
+
+ai = start_model()
 
 def answer(previous_chat):
 	previous_chat = "\n".join(previous_chat.split("\n")[-12:]) + "\n"
