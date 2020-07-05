@@ -1,6 +1,9 @@
 # cogerbot
 GPT-2 Sexting bot
 
+sudo FLASK_APP=app.py FLASK_ENV=development flask run --port 80 --host 0.0.0.0
+
+
 ## Data
 - real sexting conversations
 
@@ -26,3 +29,5 @@ GPT-2 Sexting bot
 
 - Send images
 	Fotos porno -> face depixelizer -> nude con cara inventada
+- Hotness knob
+- Penis/Pussy toggle
