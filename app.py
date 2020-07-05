@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify
 from flask import render_template
 import time
+from googletrans import Translator
+
 
 app = Flask(__name__)
 
@@ -21,16 +23,21 @@ def read_chat(chat_path):
         chat_text = f.read()
     return chat_text
 
+def translate(text,target_lang="es"):
+    translator = Translator()
+    return translator.translate(text, dest=target_lang).text
+
+
 @app.route("/response.json")
 def response():
-    human_answer = request.args['sentence']
+    human_answer = translate(request.args['sentence'],"en")
     chat = request.args['chat']
 
-    update_chat(chat,human + human_answer + "\n")    
+    update_chat(chat,human + human_answer + "\n")
     bot_answer = answer(read_chat(chat))
     update_chat(chat,bot + bot_answer + "\n")
 
-    return jsonify({'result': bot_answer})
+    return jsonify({'result': translate(bot_answer,"es")})
 
 @app.route("/")
 def home():

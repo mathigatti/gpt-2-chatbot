@@ -1,5 +1,4 @@
-#from aitextgen import aitextgen
-import time
+from aitextgen import aitextgen
 
 human = "He: "
 bot = "She: "
