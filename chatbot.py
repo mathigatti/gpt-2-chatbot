@@ -1,4 +1,4 @@
-#from aitextgen import aitextgen
+from aitextgen import aitextgen
 import time
 
 human = "He: "
@@ -8,7 +8,7 @@ full_chat = f"{human}I want to fuck you hottie\n{bot}Please fuck me really hard\
 def start_model():
 	# Para descargar el modelo la primera vez ejecutar la siguiente linea
 	#ai = aitextgen(tf_gpt2="355M", to_gpu=False)
-	ai = aitextgen(model="pytorch_model.bin", config="config.json", to_gpu=False)
+	ai = aitextgen(model="aitextgen/pytorch_model_355M.bin", config="aitextgen/config_355M.json", to_gpu=False)
 	return ai
 
 ai = start_model()
@@ -18,6 +18,6 @@ def answer(previous_chat):
 	previous_chat = previous_chat + bot
 
 	answer = ai.generate_one(prompt=previous_chat)
-	answer = answer[len(full_chat + bot):].split("\n")[0]
+	answer = answer[len(previous_chat):].split("\n")[0]
 
 	return answer
