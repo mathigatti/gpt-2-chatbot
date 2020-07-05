@@ -31,3 +31,6 @@ sudo FLASK_APP=app.py FLASK_ENV=development flask run --port 80 --host 0.0.0.0
 	Fotos porno -> face depixelizer -> nude con cara inventada
 - Hotness knob
 - Penis/Pussy toggle
+- Fixes vocabulario español Argentino
+	- concha -> coño
+	- coger -> follar
