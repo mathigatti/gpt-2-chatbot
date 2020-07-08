@@ -31,3 +31,6 @@ sudo python app.py
 	Fotos porno -> face depixelizer -> nude con cara inventada
 - Hotness knob
 - Penis/Pussy toggle
+- Fixes vocabulario español Argentino
+	- concha -> coño
+	- coger -> follar
