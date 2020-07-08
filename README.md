@@ -1,7 +1,7 @@
 # cogerbot
 GPT-2 Sexting bot
 
-sudo FLASK_APP=app.py FLASK_ENV=development flask run --port 80 --host 0.0.0.0
+sudo python app.py
 
 
 ## Data
