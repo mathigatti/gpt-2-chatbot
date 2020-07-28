@@ -29,7 +29,6 @@ def translate(text,target_lang="es"):
     translator = Translator()
     return translator.translate(text, dest=target_lang).text
 
-
 @app.route("/response.json")
 def response():
     human_answer = translate(request.args['sentence'],"en")
@@ -38,12 +37,15 @@ def response():
     update_chat(chat,human + human_answer + "\n")
     bot_answer = answer(read_chat(chat))
     update_chat(chat,bot + bot_answer + "\n")
-
     return jsonify({'result': translate(bot_answer,"es")})
+
+@app.route("/chat")
+def chat():
+    chat = generate_chat()
+    return render_template('chat.html',chat=chat)
 
 @app.route("/")
 def home():
-    chat = generate_chat()
-    return render_template('index.html',chat=chat)
+    return render_template('index.html')
 
 app.run()
