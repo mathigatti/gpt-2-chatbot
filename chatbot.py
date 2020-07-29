@@ -3,6 +3,7 @@ from aitextgen import aitextgen
 human = "He: "
 bot = "She: "
 full_chat = f"{human}I want to fuck you hottie\n{bot}Please fuck me really hard\n{human}Your pussy is really wet\n{bot}My pussy is tight and can take a lot of pain\n"
+#full_chat = f"{human}My lord, how can I stop this pain?.\n{bot}This will stop the day the truthful will benefit from their truthfulness.\n{human} Thanks my lord, for them are gardens in Paradise to live forever.\n{bot}Those who follower me will be rewarded, my son.\n"
 
 def start_model():
 	# Para descargar el modelo la primera vez ejecutar la siguiente linea
