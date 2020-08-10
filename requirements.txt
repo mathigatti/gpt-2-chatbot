@@ -1,5 +1,4 @@
 flask
-flask-ngrok
 tensorflow
 aitextgen
 googletrans

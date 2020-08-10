@@ -10,7 +10,7 @@ def start_model():
 
 ai = start_model()
 
-def answer(ai,previous_chat):
+def answer(previous_chat):
 	previous_chat = "\n".join(previous_chat.split("\n")[-12:]) + "\n"
 	previous_chat = previous_chat + bot
 

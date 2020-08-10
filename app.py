@@ -1,12 +1,9 @@
-from flask_ngrok import run_with_ngrok
 from flask import Flask, request, jsonify
 from flask import render_template
 import time
 from googletrans import Translator
 
-
 app = Flask(__name__)
-run_with_ngrok(app)   #starts ngrok when the app is run
 
 from chatbot import human, bot, full_chat, answer
 
@@ -48,4 +45,5 @@ def chat():
 def home():
     return render_template('index.html')
 
-app.run()
+if __name__ == '__main__':
+    app.run(host='0.0.0.0',port=8000)
