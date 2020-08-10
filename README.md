@@ -1,23 +1,11 @@
-# chatbot
-GPT-2 chatbot
+# GPT-2 Chatbot
+This is a basic chatbot using GPT-2.
 
-sudo python app.py
+## Usage
 
-
-## Data
-- spiritual/religious conversations
-- real sexting conversations
-
-## Similar products
-- juicebox
-- bottr.me
+You can check how to use it and try it on colab.
 
 ## Ideas for later
 
-- Send images
-	Fotos porno -> face depixelizer -> nude con cara inventada
-- Hotness knob
-- Penis/Pussy toggle
-- Fixes vocabulario español Argentino
-	- concha -> coño
-	- coger -> follar
+- Send images and gifs
+- Personality and background parameters
