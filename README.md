@@ -14,3 +14,11 @@ You can quickly try it out on the browser without installing anything using cola
 
 - Send images and gifs
 - Personality and background parameters
+- telegram version?
+
+## Support my work
+
+Mathias's open-source projects are supported by [his Patreon](https://www.patreon.com/mathigatti). If you found this project helpful, any monetary contributions to the Patreon are appreciated and will be put to good creative use.
+
+## License
+MIT
