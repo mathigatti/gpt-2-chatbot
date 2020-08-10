@@ -8,7 +8,7 @@ from googletrans import Translator
 app = Flask(__name__)
 run_with_ngrok(app)   #starts ngrok when the app is run
 
-from chatbot import start_model, human, bot, full_chat, answer
+from chatbot import human, bot, full_chat, answer
 
 def generate_chat():
     chat_path = "chats/" + time.strftime("%Y%m%d-%H%M%S") + ".txt"
@@ -35,7 +35,7 @@ def response():
     chat = request.args['chat']
 
     update_chat(chat,human + human_answer + "\n")
-    bot_answer = answer(ai,read_chat(chat))
+    bot_answer = answer(read_chat(chat))
     update_chat(chat,bot + bot_answer + "\n")
     return jsonify({'result': translate(bot_answer,"es")})
 
@@ -48,4 +48,4 @@ def chat():
 def home():
     return render_template('index.html')
 
-app.run("0.0.0.0",80)
+app.run()

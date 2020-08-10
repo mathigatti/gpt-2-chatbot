@@ -8,6 +8,8 @@ def start_model():
 	ai = aitextgen(model="aitextgen/pytorch_model_355M.bin", config="aitextgen/config_355M.json", to_gpu=True)
 	return ai
 
+ai = start_model()
+
 def answer(ai,previous_chat):
 	previous_chat = "\n".join(previous_chat.split("\n")[-12:]) + "\n"
 	previous_chat = previous_chat + bot
