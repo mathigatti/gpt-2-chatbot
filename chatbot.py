@@ -14,12 +14,12 @@ def answer(previous_chat):
 	previous_chat = "\n".join(previous_chat.split("\n")[-12:]) + "\n"
 	previous_chat = previous_chat + bot
 
-	answer = ai.generate_one(prompt=previous_chat, max_length=50)
+	answer = ai.generate_one(prompt=previous_chat, max_length=len(previous_chat)+50)
 	answer = answer[len(previous_chat):].split("\n")[0]
 	if len(answer.split(".")) > 1:
 		answer = ".".join(answer.split(".")[:-1])
 
 	if len(answer) < 2:
 		return "*NO ANSWER*"
-
-	return answer
+	else:
+		return answer
